@@ -1,0 +1,219 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>golden-deal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">golden-deal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Modules</li>
+    <li class="breadcrumb-item" >AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a href="#info" 
+            class="nav-link"
+            class="nav-link active"
+            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li class="nav-item">
+        <a href="#source" 
+            class="nav-link"
+            
+            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { ExtraOptions, RouterModule, Routes } from &#x27;@angular/router&#x27;;
+
+import { TermsConditionsComponent } from &#x27;./terms-conditions/terms-conditions.component&#x27;;
+import { SearchResultComponent } from &#x27;./search/search-result/search-result.component&#x27;;
+import { ProductDetailsComponent } from &#x27;./products/product-details/product-details.component&#x27;;
+import { HomeComponent } from &#x27;./home/home.component&#x27;;
+import { NotfoundComponent } from &#x27;./notfound/notfound.component&#x27;;
+import { ChatsComponent } from &#x27;./chats/chats.component&#x27;;
+import { AddsComponent } from &#x27;./adds/adds.component&#x27;;
+import { NewAddComponent } from &#x27;./adds/new-add/new-add.component&#x27;;
+import { BuyingRecordComponent } from &#x27;./buying-record/buying-record.component&#x27;;
+import { RegisterComponent } from &#x27;./Auth/register/register.component&#x27;;
+import { EditAddComponent } from &#x27;./adds/edit-add/edit-add.component&#x27;;
+import { SubscriptionsComponent } from &#x27;./subscriptions/subscriptions.component&#x27;;
+import { ProfileComponent } from &#x27;./profile/profile.component&#x27;;
+import { AddressComponent } from &#x27;./address/address.component&#x27;;
+import { AddEditAddressComponent } from &#x27;./address/add-edit-address/add-edit-address.component&#x27;;
+import { AuthGuardGuard } from &#x27;./Guards/auth-guard.guard&#x27;;
+import { SellerProfileComponent } from &#x27;./seller-profile/seller-profile.component&#x27;;
+import { DepositComponent } from &#x27;./deposit/deposit.component&#x27;;
+import { NotificationsComponent } from &#x27;./notifications/notifications.component&#x27;;
+import { SingleChatComponent } from &#x27;./chats/single-chat/single-chat.component&#x27;;
+
+
+
+const routes: Routes &#x3D; [
+  { path:&#x27;&#x27;, component: HomeComponent},
+  { path:&#x27;search-result&#x27;,component: SearchResultComponent},
+  { path:&#x27;search-result/:key&#x27;,component: SearchResultComponent},
+  { path:&#x27;product-details/:id&#x27;, component: ProductDetailsComponent},
+  { path:&#x27;seller-profile/:id&#x27;, component: SellerProfileComponent,canActivate:[AuthGuardGuard]},
+  { path:&#x27;chat&#x27;, component: ChatsComponent,canActivate:[AuthGuardGuard]},
+  { path:&#x27;userchat/:id&#x27;, component: SingleChatComponent,canActivate:[AuthGuardGuard]},
+  { path:&#x27;adds/:id&#x27;, component: AddsComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;new-add&#x27;, component: NewAddComponent,canActivate:[AuthGuardGuard]},
+  { path:&#x27;edit-add/:id&#x27;, component: EditAddComponent},
+  { path:&#x27;subscriptions&#x27;, component: SubscriptionsComponent,canActivate:[AuthGuardGuard]},
+  { path:&#x27;termsandconditions/:slug&#x27;, component: TermsConditionsComponent},
+  { path:&#x27;buyingrecord&#x27;, component: BuyingRecordComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;register&#x27;, component: RegisterComponent},
+  { path:&#x27;profile&#x27;, component: ProfileComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;address&#x27;, component: AddressComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;add&#x27;, component: AddEditAddressComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;edit/:id&#x27;, component: AddEditAddressComponent, canActivate:[AuthGuardGuard]},
+  { path:&#x27;deposit&#x27;, component: DepositComponent},
+  { path:&#x27;notification&#x27;, component: NotificationsComponent},
+  { path:&#x27;**&#x27;, component: NotfoundComponent}
+];
+const routerOptions: ExtraOptions &#x3D; {
+  scrollPositionRestoration: &#x27;enabled&#x27;,
+  anchorScrolling: &#x27;enabled&#x27;,
+  scrollOffset: [0, 0],
+};
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes,routerOptions)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
